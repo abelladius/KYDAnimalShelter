@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYD Animal Shelter</title>
+    <!-- Favicon -->
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="logo">
+                <img src="images/logo-kyd-wide.png" alt="kyd-logo" class="logo-img" width="200px">
+            </div>
+            
+                <ul class="nav-items" id="navItems">
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item"><a href="about.html">About Us</a></li>
+                    <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+                </ul>
+            
+                <button class="burger" id="burger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            
+        </nav>
+    </header>
+
+<!--  -->
+
+    <main>
+        <section class="gallery-container">
+            <h2 class="title">Our gallery:</h2>
+
+            <hr class="separator">
+
+            <div class="gallery">
+
+                <div class="gallery-item" onclick="showImage(1)">
+                    <img src="images/gallery-1.jpeg" alt="Photo 1">
+                </div>
+                <div class="gallery-item" onclick="showImage(2)">
+                    <img src="images/gallery-2.jpeg" alt="Photo 2">
+                </div>
+                <div class="gallery-item" onclick="showImage(3)">
+                    <img src="images/gallery-3.jpeg" alt="Photo 3">
+                </div>
+                <div class="gallery-item" onclick="showImage(4)">
+                    <img src="images/gallery-4.jpeg" alt="Photo 4">
+                </div>
+                <div class="gallery-item" onclick="showImage(5)">
+                    <img src="images/gallery-5.jpeg" alt="Photo 5">
+                </div>
+                <div class="gallery-item" onclick="showImage(6)">
+                    <img src="images/gallery-6.jpeg" alt="Photo 6">
+                </div>
+                <div class="gallery-item" onclick="showImage(7)">
+                    <img src="images/gallery-7.jpeg" alt="Photo 7">
+                </div>
+            </div>
+        
+            <div id="image-modal" class="modal">
+                <span class="close" onclick="closeImage()">&times;</span>
+                <img id="modal-content" alt="Enlarged Photo">
+            </div>
+        </section>
+
+        <hr class="separator">
+        
+        <section>
+            <p class="content-large">With every donation, we make real change possible in the lives of the most vulnerable. Every act of generosity brings us closer to our dream of providing love, care, and hope to all the homeless animals in Uganda. Join our mission, and help transform a life today!</p>
+            <button type="button" class="button cta-button">Help a few doggos!</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="#" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="icon instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p>&copy; 2023 KYD Animal Shelter. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

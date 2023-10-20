@@ -1,0 +1,633 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  /* END OF CSS RESET */
+
+  /* CUSTOM CSS */
+
+  :root {
+
+    --accent-color: #efc335; /* main accent color */
+    --primary-color: #a83d20; /* primary color */
+    --text-color: #261411; /* text color */
+    --white-color: #fff; /* color for white */
+    
+  
+    /* Fonts */
+    --font-family: 'Signika','Raleway', sans-serif;
+    --font-size: 16px;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+  }
+
+
+
+  body{
+    background-color: var(--white-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin: 0 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  a {
+    color: var(--accent-color);
+    transition: font-size 0.15s ease-in-out;
+    text-decoration: none;
+    font-size: 1rem; /* Set your default font size */
+}
+
+a:hover {
+    color: var(--primary-color);
+    font-size: 1.01em; /* Increase font size by 1% when hovering */
+}
+
+  .title{
+    font-weight: var(--font-weight-bold);
+    line-height: 1.8;
+    font-size: 2.2em;
+  }
+
+  .subtitle{
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.6;
+    font-size: 1.8em;
+  }
+
+  .content{
+    font-weight: var(--font-weight-medium);
+  }
+
+  .content-large{
+    line-height: 1.6;
+    font-size: 1.2em;
+    margin-bottom: 1rem;
+  }
+
+  .button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+  .button-secondary{
+    border: .1rem solid var(--accent-color);
+    background-color: var(--white-color);
+    color: var(--text-color);
+    padding: -10px -20px;
+    
+  }
+
+.button:hover {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+}
+
+.social-icons{
+  font-size: 1.3rem;
+  padding: .5rem;
+}
+
+
+.separator{
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--primary-color), rgba(0, 0, 0, 0));
+  margin: 4rem 0;
+}
+/* HEADER */
+  /* Navbar */
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 1rem;
+}
+
+.logo{
+  width: 20rem;
+}
+
+.nav-items{
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-items
+  nav .logo{
+  max-width: 70% ;
+}
+
+.nav-item{
+  margin-right: 1rem;
+}
+
+  /* Burger menu */
+
+.burger {
+  background-color: transparent;
+  border: 0;
+  color: var(--accent-color);
+  cursor: pointer;
+  font-size: 28px;
+  display: none;
+  }
+
+  .burger:focus{
+    outline: none;
+  }
+
+
+/* Hero Section */
+
+.hero{
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  height: 80vh;
+}
+
+.hero-img{
+  text-align: center;
+}
+
+.hero-content{
+  justify-content: center;
+  max-width: 65%;
+
+}
+
+.cta-button{
+  margin: 1rem 0;
+}
+
+
+.hero-content > .title,.subtitle,.content{
+  line-height: 1.2em;
+  margin-top: 1.2rem;
+}
+.hero-content > .title{
+  padding-top: 15%;
+}
+
+
+/* Styles for the feature section */
+.feature-section {
+  background-color: var(--accent-color); 
+  min-height: 60vh;
+  margin-left: -5%;
+  text-align: center;
+  margin-right: -5%;
+}
+
+.feature-section h2{
+  margin: 2rem auto;
+  padding-top: 2rem;
+}
+
+.feature-section > p {
+  max-width: 90%;
+  text-align: left;
+  margin: 2rem auto;
+}
+
+.feature-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.feature-subcontainer{
+  display: flex;
+  justify-content:space-evenly;
+  width: 100vw;
+  gap: 2rem;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+
+.feature-img{
+  min-width: 200px;
+}
+.feature-button{
+  margin-bottom: 2rem;
+}
+
+/* Styles for the feature cards */
+.feature-card {
+  text-align: center;
+  padding: 20px;
+  width: 30%; /* Adjust as needed */
+  height: 40vh;
+  background-color: var(--white-color); /* Use the white color as the background */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.feature-card i {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: var(--accent-color); /* Use the accent color for the icon color */
+}
+
+.feature-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--text-color); /* Use the text color for the heading */
+}
+
+.feature-card p {
+  font-size: 16px;
+  color: var(--text-color); /* Use the text color for the paragraph */
+}
+
+/* Contact Form */
+
+.contact{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.contact-container {
+  min-width: 400px;
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+  background-color: var(--white-color); /* Use the provided white color */
+}
+
+
+form {
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-color); /* Use the provided text color */
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--text-color); /* Use the provided text color */
+  border-radius: 5px;
+}
+
+.contact-information{
+  margin: 2rem auto;
+}
+.contact-information-container > iframe{
+  min-width: 400px;
+  min-height: 400px;
+  margin: 2rem auto;
+  justify-content: center;
+}
+
+.split{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+
+
+/* Styles for success message */
+#success-message {
+  color: var(--accent-color); /* Use the provided accent color */
+  font-weight: bold;
+}
+
+/* Footer */
+
+.footer {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 20px 0;
+  margin-left: -5%;
+  margin-right: -5%;
+}
+
+.footer-container {
+  max-width: 100%;
+
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles for social media icons */
+footer > .social-icons {
+  margin: 0;
+}
+
+.icon {
+  font-size: 24px;
+  margin-right: 20px;
+  color: var(--white-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: var(--accent-color); /* Change to your desired hover color */
+}
+
+    /* About Us Page styling */
+  
+.about-owner{
+  justify-content: center;
+}
+
+.about-owner-container, .about-shelter{
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.owner-description, .about-shelter-container{
+  width: 60%;
+}
+
+.owner-description  .button{
+  margin: 2rem 0;
+}
+
+.about-shelter-history{
+  align-items: right;
+}
+
+.owner-image img{
+  max-width: 400px;
+  border-radius: 50%;
+}
+
+.about-shelter .owner-image img{
+  clip-path: circle(50%);
+}
+
+
+/* Styles for the gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-item {
+  width: 300px; /* Set the desired width for each item */
+  height: 300px; /* Set the same size as width for a square shape */
+  margin: 10px;
+  cursor: pointer;
+  border: 2px solid var(--accent-color);
+  overflow:hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-item img {
+  max-width: 100%;
+  max-height: 100%;
+  transition: transform 0.2s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05); /* Slightly scale images on hover */
+}
+
+/* Styles for the modal popup */
+.modal {
+  display: none; /* Hide the modal by default */
+  position: fixed;
+  overflow:visible;
+  top: 50%; /* Vertically center the modal */
+  left: 50%; /* Horizontally center the modal */
+  transform: translate(-50%, -50%); /* Center the modal */
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  display: block;
+  max-width: 80%; /* Adjust the maximum width as needed */
+  max-height: 55vh; /* Adjust the maximum height as needed */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--white-color);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--accent-color); /* Use the accent color for the hover effect */
+}
+
+
+
+
+/* Media Queries for Responsive Design */
+/* Phones */
+  @media screen and (max-width: 767px) {
+   
+    .nav {
+      height: 15vh;
+    }
+    /* Hide navbar items  */
+    .nav-items{
+      flex-direction: column;
+      display: none;
+      width: 100%;
+    }
+    /* Display the burger */
+    .burger{
+      display: block;
+    }
+    /* Onclick event, button shows */
+    .nav-items.open{
+      display: flex;
+      width: 100%;
+      text-align: right;
+    
+    }
+    .nav-item{
+      padding: 2% 10%;
+    }
+
+    /* Hero section */
+    .hero{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 85vh;
+      text-align: center;
+    }
+    .hero-img{
+      display: none;
+    }
+    .hero-content{
+      justify-content: center;
+      max-width: 90%;
+    }
+
+    /* Feature section */
+    .feature-container{
+      flex-direction: column;
+    }
+
+    .feature-card{
+      width: 65%;
+      margin-bottom: 2rem;
+      padding: 1rem;
+    }
+    .feature-card > i {
+      margin: 0 auto;
+    }
+
+    .feature-img{
+      min-height: 400px;
+    }
+
+    /* Contact section */
+    .contact{
+      flex-direction: column;
+    }
+    .contact-information-container{
+      margin: 1rem auto;
+    }
+
+    .contact-information{
+      margin-top: 3.5rem;
+      margin-bottom: -3rem;
+    }
+
+    /* About us Section */
+
+    .about-owner-container, .about-shelter{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin: 2rem auto;
+    }
+
+    .about-shelter-container{
+      width: 95%;
+    }
+
+    .owner-image img{
+      margin: 1rem auto;
+      width: 300px;
+    }
+    .about-shelter{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .owner-description{
+      margin: 2rem auto;
+      width: 80%;
+    }
+    .hide{
+      display: none;
+    }
+}
+
+/* Tablets (landscape) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Your tablet-specific styles go here */
+
+      /* Hero section */
+      .hero{
+        display: flex;
+        justify-content: space-between;
+      }
+      .hero-img{
+        margin: 2rem auto;
+        justify-content: center;
+      }
+
+      .feature-img{
+        display:inline-block;
+      }
+
+      
+    .hide{
+      display: none;
+    }
+  }
+
+
