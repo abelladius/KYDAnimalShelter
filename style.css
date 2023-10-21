@@ -79,8 +79,9 @@
     color: var(--text-color);
     font-family: var(--font-family);
     margin: 0 1rem;
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
+    overflow-x: hidden;
   }
 
   a {
@@ -89,6 +90,11 @@
     text-decoration: none;
     font-size: 1rem; /* Set your default font size */
 }
+
+  section{
+    max-width: 90%;
+    margin: 0 auto;
+  }
 
 a:hover {
     color: var(--primary-color);
@@ -153,12 +159,51 @@ a:hover {
   margin: 4rem 0;
 }
 /* HEADER */
-  /* Navbar */
 
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.logo {
+  max-width: 70%;
+}
+
+.nav-items {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-item {
+  margin-right: 1rem;
+}
+
+/* Burger menu */
+.burger {
+  background-color: transparent;
+  border: 0;
+  color: var(--accent-color);
+  cursor: pointer;
+  font-size: 28px;
+  display: none;
+}
+
+.burger:focus {
+  outline: none;
+}
+
+  /* Navbar */
+/* 
 nav{
   display: flex;
   justify-content: space-between;
-  margin: 2rem 1rem;
+  width: 90%;
+  margin: 2rem auto;
 }
 
 .logo{
@@ -179,10 +224,10 @@ nav{
 
 .nav-item{
   margin-right: 1rem;
-}
+} */
 
   /* Burger menu */
-
+/* 
 .burger {
   background-color: transparent;
   border: 0;
@@ -194,7 +239,7 @@ nav{
 
   .burger:focus{
     outline: none;
-  }
+  } */
 
 
 /* Hero Section */
@@ -204,6 +249,7 @@ nav{
   justify-content: space-between;
   gap: 2em;
   height: 80vh;
+  margin-bottom: 2rem;
 }
 
 .hero-img{
@@ -232,11 +278,10 @@ nav{
 
 /* Styles for the feature section */
 .feature-section {
-  background-color: var(--accent-color); 
+  background:var(--accent-color); 
   min-height: 60vh;
-  margin-left: -5%;
   text-align: center;
-  margin-right: -5%;
+  border-radius: 1rem;
 }
 
 .feature-section h2{
@@ -262,7 +307,6 @@ nav{
 .feature-subcontainer{
   display: flex;
   justify-content:space-evenly;
-  width: 100vw;
   gap: 2rem;
   margin: 2rem auto;
   text-align: left;
@@ -308,12 +352,13 @@ nav{
 
 .contact{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 2rem;
   margin-top: 2rem;
 }
 
 .contact-container {
-  min-width: 400px;
+  width: 60%;
   padding: 20px;
   text-align: center;
   justify-content: center;
@@ -343,9 +388,20 @@ textarea {
 .contact-information{
   margin: 2rem auto;
 }
+
+.contact-information-container{
+  width: 100%;
+  min-width: 280px;
+  max-width: 700px;
+  min-height: 280px;
+  max-height: 700px;
+  margin-bottom: 2rem;
+}
+
 .contact-information-container > iframe{
-  min-width: 400px;
-  min-height: 400px;
+  height: 100%;
+  width: 100%;
+ 
   margin: 2rem auto;
   justify-content: center;
 }
@@ -369,9 +425,7 @@ textarea {
 .footer {
   background-color: var(--primary-color);
   color: var(--white-color);
-  padding: 20px 0;
-  margin-left: -5%;
-  margin-right: -5%;
+  margin: 0 auto;
 }
 
 .footer-container {
@@ -382,13 +436,15 @@ textarea {
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 /* Styles for social media icons */
 footer > .social-icons {
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .icon {
@@ -494,7 +550,7 @@ footer > .social-icons {
 }
 
 .close:hover {
-  color: var(--accent-color); /* Use the accent color for the hover effect */
+  color: var(--accent-color); 
 }
 
 
@@ -503,29 +559,47 @@ footer > .social-icons {
 /* Media Queries for Responsive Design */
 /* Phones */
   @media screen and (max-width: 767px) {
-   
+
+    .separator{
+      margin: 2em 0;
+    }
+
     .nav {
-      height: 15vh;
+      display: flex;
+      justify-content: space-between;
+      height: 10vh;
     }
-    /* Hide navbar items  */
-    .nav-items{
+  
+    .logo {
+      flex: 1; /* Allow the logo to grow and shrink flexibly */
+    }
+  
+    /* Hide navbar items */
+    .nav-items {
       flex-direction: column;
+      margin: 2rem 0;
       display: none;
-      width: 100%;
+      width: 100vw;
+      overflow: hidden;
+      background-color: transparent;
     }
+  
     /* Display the burger */
-    .burger{
+    .burger {
       display: block;
     }
+   
     /* Onclick event, button shows */
     .nav-items.open{
       display: flex;
+      align-items: center;
       width: 100%;
-      text-align: right;
+      
     
     }
     .nav-item{
       padding: 2% 10%;
+      
     }
 
     /* Hero section */
@@ -533,7 +607,7 @@ footer > .social-icons {
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: 85vh;
+      height: 90vh;
       text-align: center;
     }
     .hero-img{
@@ -545,6 +619,8 @@ footer > .social-icons {
     }
 
     /* Feature section */
+
+
     .feature-container{
       flex-direction: column;
     }
@@ -575,6 +651,12 @@ footer > .social-icons {
       margin-bottom: -3rem;
     }
 
+    .contact-container{
+      width: 100%;
+    }
+
+    
+
     /* About us Section */
 
     .about-owner-container, .about-shelter{
@@ -604,6 +686,25 @@ footer > .social-icons {
     .hide{
       display: none;
     }
+
+    .footer{
+      font-size: .8rem;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Gallery */
+
+    .modal-content {
+      display: block;
+      max-width: 90%; /* Adjust the maximum width as needed */
+      max-height: 75vh; /* Adjust the maximum height as needed */
+    }
 }
 
 /* Tablets (landscape) */
@@ -623,6 +724,7 @@ footer > .social-icons {
       .feature-img{
         display:inline-block;
       }
+      
 
       
     .hide{
