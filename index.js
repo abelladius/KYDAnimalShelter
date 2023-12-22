@@ -31,21 +31,30 @@ burger.addEventListener('click', () => {
     function showImage(imageNumber) {
         var modal = document.getElementById('image-modal');
         var modalImg = document.getElementById('modal-content');
-        
-        modal.style.display = 'block';
+      
+        modal.style.display = 'flex'; // Change to 'flex' to center the content vertically
         modalImg.src = 'images/gallery-' + imageNumber + '.jpeg';
-    }
-    
-    function closeImage() {
+      }
+      
+      function closeImage() {
         var modal = document.getElementById('image-modal');
         modal.style.display = 'none';
-    }
+      }
+      
+      // Close the modal if the user clicks outside the image
+      window.onclick = function(event) {
+        var modal = document.getElementById('image-modal');
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      };
+      
 
     // function showImage(imageNumber) {
     //     var modal = document.getElementById('image-modal');
     //     var modalImg = document.getElementById('modal-content');
         
-    //     modal.style.display = 'flex';
+    //     modal.style.display = 'block';
     //     modalImg.src = 'images/gallery-' + imageNumber + '.jpeg';
     // }
     
